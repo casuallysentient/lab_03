@@ -6,17 +6,17 @@ def print_graduation_status():
     :return: None.
     """
     # Student information
-    has_dean_permission = False
+    has_dean_permission = True
     has_advisor_permission = True
-    is_approved_senior = False
-    accumulated_credits = 50
+    is_approved_senior = True
+    accumulated_credits = 2
 
     # Graduation status display; this is what the students will start with.
-    if accumulated_credits > 40 and has_advisor_permission:
+    if accumulated_credits >= 40 and has_advisor_permission:
         print("This student can graduate.")
-    if accumulated_credits > 60 or is_approved_senior:
+    elif accumulated_credits >= 64 and is_approved_senior:
         print("This student can graduate.")
-    if has_dean_permission and accumulated_credits > 64:
+    elif has_dean_permission:
         print("This student can graduate.")
     else:
         print("This student cannot graduate.")
